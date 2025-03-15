@@ -8,21 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LaCaguama
+namespace LaCaguama.Formularios
 {
-    public partial class Form1: Form
+    public partial class FormAdmin: Form
     {
-        public Form1()
+        public FormAdmin()
         {
             InitializeComponent();
-
-            Configuracion.CConexio conexion = new Configuracion.CConexio();
-            conexion.EstablecerConexion();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
