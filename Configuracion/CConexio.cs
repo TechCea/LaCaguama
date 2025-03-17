@@ -53,6 +53,38 @@ namespace LaCaguama.Configuracion
                 MessageBox.Show("Error al cerrar la conexión" + e.ToString());
             }
         }
+        public Tuple<int, int> ObtenerDatosUsuario(string usuario, string contrasena)
+        {
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string query = "SELECT id_usuario, id_rol FROM usuarios WHERE usuario = @usuario AND contrasenya = @contrasena";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@usuario", usuario);
+                        cmd.Parameters.AddWithValue("@contrasena", contrasena);
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int idUsuario = reader.GetInt32(0);
+                                int idRol = reader.GetInt32(1);
+                                return Tuple.Create(idUsuario, idRol);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al validar usuario: " + ex.Message);
+            }
+            return null;
+        }
 
     }
 }

@@ -11,17 +11,18 @@ using LaCaguama.Configuracion;
 
 namespace LaCaguama.Formularios
 {
-    public partial class FormAdmin: Form
+    public partial class FormUsuario: Form
     {
-        public FormAdmin()
+        public FormUsuario()
         {
             InitializeComponent();
 
-            // Si el usuario no es administrador, cierra el formulario
-            if (SesionUsuario.Rol != 1)
+            // Si el usuario no es normal (rol 2), cierra el formulario
+            if (SesionUsuario.Rol != 2)
             {
-                MessageBox.Show("Acceso denegado. No tienes permisos de administrador.", "Acceso Restringido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
+                MessageBox.Show("Acceso denegado. No tienes permisos de usuario.", "Acceso Restringido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                return;
             }
         }
 
@@ -39,6 +40,15 @@ namespace LaCaguama.Formularios
             Form1 loginForm = new Form1();
             this.Hide();
             loginForm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnIrAAdmin_Click_Click(object sender, EventArgs e)
+        {
+            SesionUsuario.CerrarSesion(); // Limpiar datos de sesión
+            Form1 loginForm = new Form1();
+            this.Hide(); // Ocultar la ventana actual
+            loginForm.ShowDialog(); // Mostrar login
             this.Close();
         }
     }
