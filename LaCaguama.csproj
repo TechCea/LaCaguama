@@ -163,5 +163,8 @@
   <ItemGroup>
     <None Include="Resources\png-transparent-computer-icons-eye-icon-eye-side-miscellaneous-text-logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle 52.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
