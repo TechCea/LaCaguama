@@ -32,11 +32,13 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btnLogin_Click = new System.Windows.Forms.Button();
             this.btnMostrarContrasena = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(370, 73);
+            this.txtUsuario.Location = new System.Drawing.Point(351, 126);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 1;
@@ -44,7 +46,7 @@
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(370, 114);
+            this.txtContrasena.Location = new System.Drawing.Point(351, 167);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(100, 20);
             this.txtContrasena.TabIndex = 1;
@@ -52,7 +54,7 @@
             // 
             // btnLogin_Click
             // 
-            this.btnLogin_Click.Location = new System.Drawing.Point(382, 154);
+            this.btnLogin_Click.Location = new System.Drawing.Point(363, 207);
             this.btnLogin_Click.Name = "btnLogin_Click";
             this.btnLogin_Click.Size = new System.Drawing.Size(75, 23);
             this.btnLogin_Click.TabIndex = 2;
@@ -63,12 +65,31 @@
             // btnMostrarContrasena
             // 
             this.btnMostrarContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 0.25F);
-            this.btnMostrarContrasena.Location = new System.Drawing.Point(476, 114);
+            this.btnMostrarContrasena.Location = new System.Drawing.Point(457, 167);
             this.btnMostrarContrasena.Name = "btnMostrarContrasena";
             this.btnMostrarContrasena.Size = new System.Drawing.Size(29, 23);
             this.btnMostrarContrasena.TabIndex = 3;
             this.btnMostrarContrasena.UseVisualStyleBackColor = true;
             this.btnMostrarContrasena.Click += new System.EventHandler(this.btnMostrarContrasena_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(348, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Usuario";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(351, 153);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Contraseña";
             // 
             // Form1
             // 
@@ -76,6 +97,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LaCaguama.Properties.Resources.Rectangle_52;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMostrarContrasena);
             this.Controls.Add(this.btnLogin_Click);
             this.Controls.Add(this.txtContrasena);
@@ -92,6 +115,8 @@
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button btnLogin_Click;
         private System.Windows.Forms.Button btnMostrarContrasena;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
