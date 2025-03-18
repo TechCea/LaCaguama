@@ -41,5 +41,11 @@ namespace LaCaguama.Formularios
             loginForm.ShowDialog();
             this.Close();
         }
+
+        private void btnGestionUsuarios_Click(object sender, EventArgs e)
+        {
+            FormUsuariosAdmin formUsuarios = new FormUsuariosAdmin();
+            formUsuarios.ShowDialog();
+        }
     }
 }

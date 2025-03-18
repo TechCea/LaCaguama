@@ -85,6 +85,83 @@ namespace LaCaguama.Configuracion
             }
             return null;
         }
+        // Obtener todos los usuarios
+        public DataTable ObtenerUsuarios()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string query = "SELECT \r\n                    u.usuario AS 'Usuario', \r\n                    u.nombre AS 'Nombre',\r\n                    u.correo AS 'Correo',\r\n                    u.telefono_contacto AS 'Teléfono',\r\n        u.contrasenya AS 'Contraseña',\r\n            r.nombre_rol AS 'Rol'\r\n                FROM usuarios u\r\n                JOIN roles r ON u.id_rol = r.id_rol";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener usuarios: " + ex.Message);
+            }
+            return dt;
+        }
+
+        public bool AgregarUsuario(string nombre, string correo, string usuario, string contrasena, string telefono, int idRol)
+        {
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string query = "INSERT INTO usuarios (nombre, correo, usuario, contrasenya, telefono_contacto, id_rol) " +
+                                   "VALUES (@nombre, @correo, @usuario, @contrasena, @telefono, @idRol)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", nombre);
+                        cmd.Parameters.AddWithValue("@correo", correo);
+                        cmd.Parameters.AddWithValue("@usuario", usuario);
+                        cmd.Parameters.AddWithValue("@contrasena", contrasena);
+                        cmd.Parameters.AddWithValue("@telefono", telefono);
+                        cmd.Parameters.AddWithValue("@idRol", idRol);
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        return filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar usuario: " + ex.Message);
+                return false;
+            }
+        }
+        public DataTable ObtenerRoles()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string query = "SELECT id_rol, nombre_rol FROM roles";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener roles: " + ex.Message);
+            }
+            return dt;
+        }
+
 
     }
 }
