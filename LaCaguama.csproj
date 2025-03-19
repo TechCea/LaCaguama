@@ -107,22 +107,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormAdmin.cs">
+    <Compile Include="Formularios\FormAdminVistas\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormAdmin.Designer.cs">
+    <Compile Include="Formularios\FormAdminVistas\FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormUsuario.cs">
+    <Compile Include="Formularios\FormAdminVistas\FormMenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormUsuario.Designer.cs">
+    <Compile Include="Formularios\FormAdminVistas\FormMenuAdmin.Designer.cs">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormUsuariosVistas\FormUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormUsuariosVistas\FormUsuario.Designer.cs">
       <DependentUpon>FormUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormUsuariosAdmin.cs">
+    <Compile Include="Formularios\FormAdminVistas\FormUsuariosAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormUsuariosAdmin.Designer.cs">
+    <Compile Include="Formularios\FormAdminVistas\FormUsuariosAdmin.Designer.cs">
       <DependentUpon>FormUsuariosAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -130,13 +136,16 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormAdmin.resx">
+    <EmbeddedResource Include="Formularios\FormAdminVistas\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormUsuario.resx">
+    <EmbeddedResource Include="Formularios\FormAdminVistas\FormMenuAdmin.resx">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormUsuariosVistas\FormUsuario.resx">
       <DependentUpon>FormUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormUsuariosAdmin.resx">
+    <EmbeddedResource Include="Formularios\FormAdminVistas\FormUsuariosAdmin.resx">
       <DependentUpon>FormUsuariosAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
