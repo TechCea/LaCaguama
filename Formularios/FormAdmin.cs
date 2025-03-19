@@ -11,7 +11,7 @@ using LaCaguama.Configuracion;
 
 namespace LaCaguama.Formularios
 {
-    public partial class FormAdmin: Form
+    public partial class FormAdmin : Form
     {
         public FormAdmin()
         {
