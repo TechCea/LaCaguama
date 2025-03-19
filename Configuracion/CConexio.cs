@@ -12,7 +12,7 @@ namespace LaCaguama.Configuracion
     class CConexio
     {
         private MySqlConnection conectar = null;
-
+        //hola
         private static string usuario = "root";
         private static string contrasenia = "root";
         private static string bd = "LaCaguamaBD";
