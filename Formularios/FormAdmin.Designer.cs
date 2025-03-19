@@ -45,7 +45,7 @@
             // 
             // btnCerrarSesion_Click
             // 
-            this.btnCerrarSesion_Click.Location = new System.Drawing.Point(384, 167);
+            this.btnCerrarSesion_Click.Location = new System.Drawing.Point(355, 132);
             this.btnCerrarSesion_Click.Name = "btnCerrarSesion_Click";
             this.btnCerrarSesion_Click.Size = new System.Drawing.Size(75, 23);
             this.btnCerrarSesion_Click.TabIndex = 1;
